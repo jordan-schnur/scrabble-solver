@@ -1,0 +1,233 @@
+:root {
+  --bg: #f6f2ea;
+  --bg-2: #ffffff;
+  --ink: #2b2418;
+  --ink-soft: #6b6152;
+  --rule: #ddd3c2;
+  --tile: #e7c07b;
+  --tile-blank: #cfe3d0;
+  --tile-ink: #2b2418;
+  --accent: #1f7a4d;
+  --accent-ink: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16130e;
+    --bg-2: #211c14;
+    --ink: #efe7d8;
+    --ink-soft: #a89b85;
+    --rule: #3a3225;
+    --tile: #d9ab5e;
+    --tile-blank: #7ba381;
+    --tile-ink: #241d11;
+    --accent: #2c9c65;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.header h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.9rem;
+  margin: 0 0 0.25rem;
+}
+
+.logo-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: var(--tile);
+  color: var(--tile-ink);
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.tagline {
+  color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+}
+
+kbd {
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 0.25rem;
+  padding: 0 0.3rem;
+  font-family: inherit;
+}
+
+.rack-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#rack {
+  flex: 1;
+  font-size: 1.5rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding: 0.6rem 0.9rem;
+  border: 2px solid var(--rule);
+  border-radius: 0.6rem;
+  background: var(--bg-2);
+  color: var(--ink);
+  min-width: 0;
+}
+
+#rack:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.go {
+  font-size: 1.15rem;
+  font-family: inherit;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+}
+
+.go:active { transform: translateY(1px); }
+
+.filters {
+  margin-top: 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.6rem;
+  background: var(--bg-2);
+  padding: 0.5rem 0.9rem;
+}
+
+.filters summary {
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  padding: 0.75rem 0 0.5rem;
+}
+
+.filter-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.filter-grid input,
+.filter-grid select {
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.4rem;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.status {
+  margin: 1.25rem 0 0.5rem;
+  color: var(--ink-soft);
+  min-height: 1.5rem;
+}
+
+.group {
+  margin-bottom: 1.5rem;
+}
+
+.group h2 {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.3rem;
+  margin: 0 0 0.6rem;
+}
+
+.words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.word {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15rem;
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.word:hover { border-color: var(--accent); }
+
+.word .tiles {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.word .tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  background: var(--tile);
+  color: var(--tile-ink);
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.word .tile.blank { background: var(--tile-blank); }
+
+.word .pts {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-left: 0.3rem;
+}
+
+.footer {
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+
+.footer a { color: var(--accent); }
+
+@media (max-width: 480px) {
+  #rack { font-size: 1.2rem; letter-spacing: 0.25em; }
+  .go { padding: 0.6rem 1rem; }
+}
