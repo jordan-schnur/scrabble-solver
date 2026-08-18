@@ -31,12 +31,12 @@ python3 -m http.server 8000
 ## Tests
 
 ```sh
-node --test test/
+node --test
 ```
 
 ## Deploy
 
-Pushes to `main` deploy automatically via `.github/workflows/pages.yml`. One-time setup: in the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
+Pushes to `main` deploy automatically via `.github/workflows/pages.yml`; the workflow enables GitHub Pages itself on first run. Note: on a free personal GitHub plan, Pages only works on **public** repositories.
 
 ## How it works
 
