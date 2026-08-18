@@ -36,7 +36,7 @@ node --test
 
 ## Deploy
 
-Pushes to `main` deploy automatically via `.github/workflows/pages.yml`; the workflow enables GitHub Pages itself on first run. Note: on a free personal GitHub plan, Pages only works on **public** repositories.
+Live at **https://jordan-schnur.github.io/scrabble-solver/**. Pushes to `main` deploy automatically: `.github/workflows/pages.yml` runs the tests, then syncs `main` to the `gh-pages` branch, which GitHub Pages serves. Note: on a free personal GitHub plan, Pages only works on **public** repositories.
 
 ## How it works
 
