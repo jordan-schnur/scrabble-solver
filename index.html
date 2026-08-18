@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scrabble Solver</title>
+  <meta name="description" content="Free, ad-free Scrabble and Words With Friends word finder. Enter up to 12 letters (use ? for blanks) and get every playable word with its score." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23e7c07b'/><text x='50' y='68' font-size='60' text-anchor='middle' font-family='Georgia' fill='%232b2418'>S</text></svg>" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <h1><span class="logo-tile">S</span> Scrabble Solver</h1>
+      <p class="tagline">Ad-free word finder. Enter up to 12 letters — use <kbd>?</kbd> or <kbd>-</kbd> for blank tiles.</p>
+    </header>
+
+    <form id="solver-form" autocomplete="off">
+      <div class="rack-row">
+        <input
+          id="rack"
+          type="text"
+          inputmode="latin"
+          maxlength="12"
+          placeholder="e.g. RETAINS?"
+          aria-label="Your letters"
+          autofocus
+        />
+        <button type="submit" class="go">Solve</button>
+      </div>
+
+      <details class="filters" id="filters">
+        <summary>Advanced filters</summary>
+        <div class="filter-grid">
+          <label>Begins with
+            <input id="begins" type="text" maxlength="8" placeholder="e.g. qu" />
+          </label>
+          <label>Contains
+            <input id="contains" type="text" maxlength="8" placeholder="e.g. zz" />
+          </label>
+          <label>Ends with
+            <input id="ends" type="text" maxlength="8" placeholder="e.g. ing" />
+          </label>
+          <label>Max length
+            <select id="maxlen"></select>
+          </label>
+          <label>Scoring
+            <select id="game">
+              <option value="scrabble">Scrabble</option>
+              <option value="wwf">Words With Friends</option>
+            </select>
+          </label>
+          <label>Sort by
+            <select id="sort">
+              <option value="score">Score</option>
+              <option value="length">Length</option>
+              <option value="az">A–Z</option>
+            </select>
+          </label>
+        </div>
+      </details>
+    </form>
+
+    <section id="status" class="status" role="status"></section>
+    <section id="results" class="results" aria-live="polite"></section>
+
+    <footer class="footer">
+      <p>
+        Word list: <a href="https://en.wikipedia.org/wiki/Enhanced_North_American_Benchmark_Lexicon" rel="noopener">ENABLE</a>
+        (public domain, 172k words). Everything runs in your browser — nothing is sent anywhere.
+        <a href="https://github.com/jordan-schnur/scrabble-solver" rel="noopener">Source on GitHub</a>.
+      </p>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
